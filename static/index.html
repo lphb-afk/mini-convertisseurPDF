@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Convertisseur PDF - Conversion intelligente et sécurisée</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="/static/logo.svg" alt="Mini Convertisseur PDF Logo" class="logo">
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">PDF en vrac ?</span>
+                <br>
+                On <span class="gradient-text">arrange ça</span> ✨
+            </h1>
+            <p class="hero-subtitle">
+                Le convertisseur qui <span class="highlight">enfin</span> comprend vos documents
+                <br>
+                Plus de galères, plus de stress, juste de la <strong>magie</strong> 🔮
+            </p>
+            <div class="hero-cta">
+                <button id="cta-button" class="cta-button primary">
+                    Commencer maintenant
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pourquoi on est <span class="gradient-text">différents</span> ? 😎</h2>
+                <p class="section-subtitle">Parce que la fiabilité n'est pas une option</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+                    <h3 class="feature-title">Plus rapide que Flash !</h3>
+                    <p class="feature-description">Moins de 10 secondes, c'est plus rapide que de prendre un café ☕</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        🛡️
+                    </div>
+                    <h3 class="feature-title">Sécurité blindée</h3>
+                    <p class="feature-description">Vos fichiers disparaissent après, comme par magie ✨</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+                    <h3 class="feature-title">On transforme tout</h3>
+                    <p class="feature-description">PDF, images, Word... Même vos anciens fichiers WordStar ! 📼</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converters Section -->
+    <section id="converters" class="converters">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos <span class="gradient-text">fonctionnalités</span> avancées</h2>
+                <p class="section-subtitle">Découvrez nos outils de conversion avancés</p>
+            </div>
+            
+            <div class="converter-grid">
+                <!-- Image vers PDF -->
+                <div class="converter-card">
+                    <div class="converter-header">
+                        <h3>Image vers PDF</h3>
+                        <div class="converter-icon">🖼️</div>
+                    </div>
+                    <form id="image-to-pdf-form">
+                        <input type="file" name="file" accept="image/*" required>
+                        <button type="submit" class="convert-btn">Convertir</button>
+                    </form>
+                    <div id="image-to-pdf-result" class="result"></div>
+                </div>
+
+                <!-- PDF vers Word -->
+                <div class="converter-card">
+                    <div class="converter-header">
+                        <h3>PDF vers Word</h3>
+                        <div class="converter-icon">📄</div>
+                    </div>
+                    <form id="pdf-to-word-form">
+                        <input type="file" name="file" accept=".pdf" required>
+                        <button type="submit" class="convert-btn">Convertir</button>
+                    </form>
+                    <div id="pdf-to-word-result" class="result"></div>
+                </div>
+
+                <!-- Word vers PDF -->
+                <div class="converter-card">
+                    <div class="converter-header">
+                        <h3>Word vers PDF</h3>
+                        <div class="converter-icon">📝</div>
+                    </div>
+                    <form id="word-to-pdf-form">
+                        <input type="file" name="file" accept=".docx,.doc" required>
+                        <button type="submit" class="convert-btn">Convertir</button>
+                    </form>
+                    <div id="word-to-pdf-result" class="result"></div>
+                </div>
+
+                <!-- PDF vers Images -->
+                <div class="converter-card">
+                    <div class="converter-header">
+                        <h3>PDF vers Images</h3>
+                        <div class="converter-icon">🖼️</div>
+                    </div>
+                    <form id="pdf-to-images-form">
+                        <input type="file" name="file" accept=".pdf" required>
+                        <button type="submit" class="convert-btn">Convertir</button>
+                    </form>
+                    <div id="pdf-to-images-result" class="result"></div>
+                </div>
+
+                <!-- OCR PDF -->
+                <div class="converter-card">
+                    <div class="converter-header">
+                        <h3>OCR PDF</h3>
+                        <div class="converter-icon">🔍</div>
+                    </div>
+                    <form id="ocr-pdf-form">
+                        <input type="file" name="file" accept=".pdf" required>
+                        <button type="submit" class="convert-btn">Extraire le texte</button>
+                    </form>
+                    <div id="ocr-pdf-result" class="result"></div>
+                    <textarea id="ocr-textarea" style="display:none; width:100%; height:150px; margin-top:10px;"></textarea>
+                    <button id="copy-btn" style="display:none; margin-top:10px;" onclick="copyToClipboard()">Copier le texte</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">PDFs sauvés du bazar 🆘</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Taux de "Oh putain, ça marche !" 😍</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">&lt;10s</div>
+                    <div class="stat-label">Plus rapide que votre café ☕</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0€</div>
+                    <div class="stat-label">Gratuit comme l'amour 💖</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/static/logo.svg" alt="Mini Convertisseur PDF Logo" class="footer-logo">
+                    <p>La solution de conversion la plus avancée et sécurisée du marché</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="#">Fonctionnalités</a></li>
+                            <li><a href="#">Sécurité</a></li>
+                            <li><a href="#">Tarifs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mini Convertisseur PDF. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test du Bouton</title>
+</head>
+<body>
+    <section class="hero" style="height: 100vh; background: blue; color: white; display: flex; align-items: center; justify-content: center;">
+        <h1>Hero Section</h1>
+    </section>
+    
+    <section id="converters" style="height: 100vh; background: red; color: white; display: flex; align-items: center; justify-content: center;">
+        <h1>Converters Section</h1>
+    </section>
+
+    <button id="cta-button" style="position: fixed; top: 50px; left: 50px; z-index: 1000; padding: 10px; background: yellow; border: none; cursor: pointer;">
+        Test Scroll
+    </button>
+
+    <script>
+        console.log('Script chargé!');
+        
+        document.getElementById('cta-button').addEventListener('click', function() {
+            console.log('Bouton cliqué!');
+            alert('Bouton cliqué!');
+            document.getElementById('converters').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
