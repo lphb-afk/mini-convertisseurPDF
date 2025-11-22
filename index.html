@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Convertisseur PDF - Démonstration</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <img src="logo.svg" alt="Logo" width="48" height="48">
+                <h1>Mini Convertisseur PDF</h1>
+            </div>
+            <div class="repo-link">
+                <a href="https://github.com/lphb-afk/mini-convertisseurPDF" target="_blank" rel="noopener">
+                    <span>Voir sur GitHub</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>🚀 Application Web Moderne</h2>
+            <p class="hero-description">
+                Application web complète pour convertir vos documents PDF et images avec une interface intuitive et une sécurité renforcée.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Image → PDF</h3>
+                    <p>Convertit PNG, JPG, GIF, BMP, TIFF en PDF haute qualité</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>PDF → Word</h3>
+                    <p>Extrait le texte d'un PDF vers un document Word (DOCX)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Word → PDF</h3>
+                    <p>Convertit DOCX/DOC en PDF avec mise en forme</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>PDF → Images</h3>
+                    <p>Convertit chaque page PDF en image PNG haute résolution</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>OCR PDF</h3>
+                    <p>Extrait le texte des PDFs scannés avec Tesseract</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Sécurité</h3>
+                    <p>Validation complète, rate limiting, headers sécurisés</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo">
+            <h2>🖥️ Interface de Démonstration</h2>
+            <div class="demo-note">
+                <div class="note-icon">ℹ️</div>
+                <div class="note-content">
+                    <strong>Démo statique</strong><br>
+                    Cette page présente l'interface et les fonctionnalités. Pour utiliser l'application complète avec conversions réelles, 
+                    <a href="https://github.com/lphb-afk/mini-convertisseurPDF" target="_blank" rel="noopener">consultez le repository GitHub</a> 
+                    ou déployez-le sur Railway, DigitalOcean, ou Heroku.
+                </div>
+            </div>
+
+            <!-- Simulated Converter Interface -->
+            <div class="converter-demo">
+                <div class="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <h3>Glissez-déposez votre fichier ici</h3>
+                    <p>ou cliquez pour sélectionner un fichier</p>
+                    <input type="file" id="fileInput" accept=".pdf,.docx,.png,.jpg,.jpeg,.gif,.bmp,.tiff" hidden>
+                    <button onclick="document.getElementById('fileInput').click()" class="upload-btn">
+                        📁 Sélectionner un fichier
+                    </button>
+                </div>
+                
+                <div class="format-selector">
+                    <label for="conversionType">Type de conversion :</label>
+                    <select id="conversionType">
+                        <option value="">-- Sélectionnez --</option>
+                        <option value="image-pdf">🖼️ Image → PDF</option>
+                        <option value="pdf-word">📄 PDF → Word</option>
+                        <option value="word-pdf">📝 Word → PDF</option>
+                        <option value="pdf-images">🖼️ PDF → Images</option>
+                        <option value="ocr-pdf">🔍 OCR PDF</option>
+                    </select>
+                </div>
+
+                <div class="convert-btn-container">
+                    <button class="convert-btn" onclick="simulateConversion()">
+                        🚀 Convertir
+                    </button>
+                </div>
+
+                <div id="result" class="result-area" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h4>Conversion simulée réussie !</h4>
+                    <p>Dans la version complète, le fichier converti serait téléchargeable ici.</p>
+                    <button onclick="hideResult()" class="new-conversion-btn">
+                        🔄 Nouvelle conversion
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="tech-stack">
+            <h2>🛠️ Technologies Utilisées</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Backend</h4>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pydantic</span>
+                </div>
+                <div class="tech-item">
+                    <h4>Frontend</h4>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <h4>Conversions</h4>
+                    <span class="tech-badge">PyPDF</span>
+                    <span class="tech-badge">ReportLab</span>
+                    <span class="tech-badge">Tesseract</span>
+                </div>
+                <div class="tech-item">
+                    <h4>Sécurité</h4>
+                    <span class="tech-badge">Rate Limiting</span>
+                    <span class="tech-badge">Validation</span>
+                    <span class="tech-badge">Security Headers</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment -->
+        <section class="deployment">
+            <h2>🚀 Déploiement</h2>
+            <div class="deployment-grid">
+                <div class="deployment-card">
+                    <h4>🌐 GitHub</h4>
+                    <p>Code source et documentation</p>
+                    <a href="https://github.com/lphb-afk/mini-convertisseurPDF" target="_blank" rel="noopener">
+                        🔗 Voir le repository
+                    </a>
+                </div>
+                <div class="deployment-card">
+                    <h4>⚡ Railway</h4>
+                    <p>Déploiement facile et rapide</p>
+                    <a href="https://railway.app" target="_blank" rel="noopener">
+                        🚀 Déployer sur Railway
+                    </a>
+                </div>
+                <div class="deployment-card">
+                    <h4>☁️ DigitalOcean</h4>
+                    <p>Solution professionnelle</p>
+                    <a href="https://www.digitalocean.com/products/app-platform" target="_blank" rel="noopener">
+                        🏗️ Déployer sur DO
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2024 Mini Convertisseur PDF - Développé par <strong>phibel</strong></p>
+                <p>Application open source disponible sur <a href="https://github.com/lphb-afk/mini-convertisseurPDF" target="_blank" rel="noopener">GitHub</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function simulateConversion() {
+            const fileInput = document.getElementById('fileInput');
+            const conversionType = document.getElementById('conversionType');
+            
+            if (!fileInput.files.length) {
+                alert('⚠️ Veuillez sélectionner un fichier d\'abord !');
+                return;
+            }
+            
+            if (!conversionType.value) {
+                alert('⚠️ Veuillez sélectionner un type de conversion !');
+                return;
+            }
+            
+            // Simuler une conversion
+            const resultArea = document.getElementById('result');
+            resultArea.style.display = 'block';
+            
+            // Faire défiler vers le résultat
+            resultArea.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function hideResult() {
+            document.getElementById('result').style.display = 'none';
+        }
+        
+        // Drag and drop functionality
+        const uploadArea = document.querySelector('.upload-area');
+        const fileInput = document.getElementById('fileInput');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            uploadArea.classList.add('highlight');
+        }
+        
+        function unhighlight() {
+            uploadArea.classList.remove('highlight');
+        }
+        
+        uploadArea.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length > 0) {
+                // Simuler l'upload du fichier
+                const fileName = files[0].name;
+                const uploadText = uploadArea.querySelector('h3');
+                const uploadDesc = uploadArea.querySelector('p');
+                
+                uploadText.textContent = `📄 ${fileName}`;
+                uploadDesc.textContent = 'Fichier sélectionné ! Maintenant choisissez le type de conversion.';
+            }
+        }
+        
+        // Animation d'apparition au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observer tous les éléments avec animation
+        document.querySelectorAll('.feature-card, .tech-item, .deployment-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
